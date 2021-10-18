@@ -10,6 +10,17 @@ code {
     monospace;
 }
 
+.btn-home {
+  background-color: #ec4d4e !important;
+  color: white;
+  font-size: 16px;
+}
+
+.btn-home:hover {
+  color: white;
+  background-color: #d84545 !important;
+}
+
 .btn-color {
   border: 1px solid #ec4d4e;
   color: #ec4d4e;

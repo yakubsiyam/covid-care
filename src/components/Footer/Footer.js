@@ -81,9 +81,15 @@ const Footer = () => {
             <div className="mt-3">
               <span className="text-color pt-3">Follow Us</span>
               <div className="fs-5 pt-0">
-                <i className="fab fa-facebook-f text-dark icon-color pe-4"></i>{" "}
-                <i className="fab fa-twitter text-dark icon-color pe-4"></i>{" "}
-                <i className="fab fa-youtube text-dark icon-color pe-4"></i>
+                <Link to="/notfound">
+                  <i className="fab fa-facebook-f text-dark icon-color pe-4"></i>
+                </Link>{" "}
+                <Link to="/notfound">
+                  <i className="fab fa-twitter text-dark icon-color pe-4"></i>
+                </Link>
+                <Link to="/notfound">
+                  <i className="fab fa-youtube text-dark icon-color pe-4"></i>
+                </Link>{" "}
               </div>
             </div>
           </div>

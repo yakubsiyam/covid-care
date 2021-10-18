@@ -51,7 +51,9 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
-                  <span className="btn btn-color ms-lg-4">Login</span>
+                  <span className="btn btn-color ms-lg-4">
+                    Login <i className="fas fa-sign-in-alt"></i>
+                  </span>
                 </Link>
               </li>
             </ul>
