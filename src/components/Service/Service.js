@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HomeServices = (props) => {
-  const { img, title, time, contactNumber } = props.service;
+const Service = (props) => {
+  const { img, title, time, contactNumber, id, cost } = props.service;
   return (
     <div className="col-lg-6">
       <div className="border rounded p-2 shadow">
@@ -12,6 +12,7 @@ const HomeServices = (props) => {
           </div>
           <div className="col-md-6">
             <h2 className="text-dark fs-4">{title}</h2>
+
             <span className="fs-6 d-block">
               <i className="far fa-clock text-color"></i> {time}
             </span>
@@ -21,8 +22,17 @@ const HomeServices = (props) => {
               </span>{" "}
               {contactNumber}
             </span>
-            <Link to="/services" className="btn btn-home mt-3 rounded-pill">
-              See More
+            <span className="fs-6 d-block">
+              <span className="text-color">
+                <i className="fas fa-dollar-sign"></i>
+              </span>{" "}
+              {cost}
+            </span>
+            <Link
+              to={`/services/${id}`}
+              className="btn btn-services mt-3 rounded-3 text-color"
+            >
+              See Details
             </Link>
           </div>
         </div>
@@ -31,4 +41,4 @@ const HomeServices = (props) => {
   );
 };
 
-export default HomeServices;
+export default Service;

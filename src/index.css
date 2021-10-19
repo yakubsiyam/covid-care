@@ -31,6 +31,16 @@ code {
   color: white;
 }
 
+.btn-services {
+  /* border: 1px solid #000; */
+  color: #000;
+}
+
+.btn-services:hover {
+  background-color: #ec4d4e;
+  color: white !important;
+}
+
 .text-color {
   color: #ec4d4e !important;
   font-weight: 500;
@@ -46,10 +56,10 @@ code {
 
 .error-btn {
   background-color: #ec4d4e;
-  color: #fff;
+  color: #fff !important;
 }
 
 .error-btn:hover {
-  color: white;
+  color: white !important;
   background-color: #d84545;
 }

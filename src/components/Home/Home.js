@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import heroImage from "../../images/hero-image.png";
 import heroAbout from "../../images/hero-about.png";
 import symptomImg from "../../images/symptoms-img.png";
+import guideImg from "../../images/guide-img.png";
 import HomeServices from "../HomeServices/HomeServices";
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
   return (
     <div className="container">
       {/* Showcase section */}
-      <div className="row justify-content-between my-5">
+      <section className="row justify-content-between my-5">
         <div className="col-md-5 row align-items-center justify-content-between">
           <div>
             <span className="btn error-btn me-3 py-0">covid-19</span>
@@ -43,10 +44,10 @@ const Home = () => {
         <div className="col-md-6">
           <img className="img-fluid" src={heroImage} alt="" />
         </div>
-      </div>
+      </section>
 
       {/* About Section */}
-      <div className="row justify-content-between my-5">
+      <section className="row justify-content-between my-5">
         <div className="col-md-6">
           <img className="img-fluid" src={heroAbout} alt="about img" />
         </div>
@@ -62,10 +63,10 @@ const Home = () => {
             </small>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Symptoms Section */}
-      <div className="row justify-content-between my-5">
+      <section className="row justify-content-between my-5">
         <div className="col-md-6 row align-items-center justify-content-between">
           <div>
             <p className="text-color fs-5">
@@ -84,15 +85,48 @@ const Home = () => {
         <div className="col-md-6">
           <img className="img-fluid" src={symptomImg} alt="about img" />
         </div>
-      </div>
+      </section>
 
       {/* Home Services Section */}
-      <h1 className="text-color text-center pb-3">Services</h1>
-      <div className="row mb-5 g-4">
-        {services.map((service) => (
-          <HomeServices key={service.id} service={service}></HomeServices>
-        ))}
-      </div>
+      <section>
+        <h1 className="text-color text-center pb-3">Services</h1>
+        <div className="row mb-5 g-4">
+          {services.map((service) => (
+            <HomeServices key={service.id} service={service}></HomeServices>
+          ))}
+        </div>
+      </section>
+
+      {/* guidelines section */}
+      <section className="row justify-content-between my-5">
+        <div className="col-md-6">
+          <img className="img-fluid" src={guideImg} alt="about img" />
+        </div>
+        <div className="col-md-6 row align-items-center justify-content-between">
+          <div>
+            <p className="text-color fs-5">Wash Your Hands Frequently</p>
+            <h1 className="text-dark my-3">
+              Protect yourself, wash your hands
+            </h1>
+            <small className="text-secondary">
+              Regularly and thoroughly clean your hands with an alcohol-based
+              hand rub or wash them with soap and water as it kills viruses that
+              may be on your hands.
+            </small>
+            <br />
+            <Link
+              className="btn rounded-pill btn-home btn-lg mt-3"
+              to="/guidelines"
+            >
+              Learn More{" "}
+              <i
+                className="fas fa-chevron-right"
+                style={{ fontSize: "12px" }}
+              ></i>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

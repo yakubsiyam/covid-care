@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import logo from "../../images/logo.png";
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -49,13 +52,40 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  <span className="btn btn-color ms-lg-4">
-                    Login <i className="fas fa-sign-in-alt"></i>
-                  </span>
-                </Link>
+              <li className="nav-item my-auto">
+                <span className="nav-link">
+                  {" "}
+                  {user?.email && (
+                    <span className="nav-link">
+                      <img
+                        src={user.photoURL}
+                        className="rounded-circle w-25 p-4 p-lg-2"
+                        alt="user img"
+                      />
+                      <span className="text-color">
+                        Hi, {user.displayName}{" "}
+                      </span>
+                    </span>
+                  )}
+                </span>
               </li>
+              {user?.email ? (
+                <li className="nav-item my-auto" onClick={logOut}>
+                  <Link className="nav-link" to="/login">
+                    <span className="btn btn-color">
+                      Logout <i className="fas fa-sign-out-alt"></i>
+                    </span>
+                  </Link>
+                </li>
+              ) : (
+                <li className="nav-item my-auto">
+                  <Link className="nav-link my-auto" to="/login">
+                    <span className="btn btn-color">
+                      Login <i className="fas fa-sign-in-alt"></i>
+                    </span>
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
