@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.jpg";
@@ -14,9 +15,24 @@ const Login = () => {
       history.push(redirect_uri);
     });
   };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = (e) => {
+    console.log(email, password);
+    e.preventDefault();
+  };
   return (
     <div className="container my-5">
-      <div className="row align-items-center">
+      <form onSubmit={handleLogin} className="row align-items-center">
         <div className="col-md-6">
           <img className="img-fluid" src={login} alt="login img" />
         </div>
@@ -27,6 +43,7 @@ const Login = () => {
               Email address
             </label>
             <input
+              onBlur={handleEmailChange}
               type="email"
               className="form-control"
               id="exampleFormControlInput1"
@@ -38,15 +55,16 @@ const Login = () => {
               Password
             </label>
             <input
+              onBlur={handlePasswordChange}
               type="password"
               className="form-control"
               id="inputPassword"
               placeholder="Your password"
             />
           </div>
-          <Link className="btn error-btn mb-2 col-12" to="/notfound">
+          <button className="btn error-btn mb-2 col-12">
             <i className="fas fa-sign-in-alt"></i> Login
-          </Link>
+          </button>
           <p className="my-3">
             new to Covid Care? <Link to="/register">Create Account</Link>
           </p>
@@ -55,7 +73,7 @@ const Login = () => {
             <i className=" fab fa-google"></i> Login with Google
           </p>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

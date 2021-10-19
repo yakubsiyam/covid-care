@@ -5,7 +5,6 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Services from "./components/Services/Services";
 import Guidelines from "./components/Guidelines/Guidelines";
-import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
 import Notfound from "./components/Notfound/Notfound";
 import Header from "./components/Header/Header";
@@ -45,10 +44,6 @@ function App() {
             <PrivateRoute exact path="/guidelines">
               <Guidelines></Guidelines>
             </PrivateRoute>
-
-            <Route exact path="/contact">
-              <Contact></Contact>
-            </Route>
 
             <Route exact path="/login">
               <Login></Login>
