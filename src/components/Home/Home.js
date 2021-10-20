@@ -5,7 +5,7 @@ import heroAbout from "../../images/hero-about.png";
 import symptomImg from "../../images/symptoms-img.png";
 import guideImg from "../../images/guide-img.png";
 import HomeServices from "../HomeServices/HomeServices";
-import careful from "../../images/careful.jpg";
+import aboutImg from "../../images/about-img.jpg";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -129,23 +129,30 @@ const Home = () => {
         </div>
       </section>
 
-      {/* be careful section */}
+      {/* About Us */}
       <section className="row justify-content-between my-5">
+        <h1 className="text-color text-center pb-3">Services</h1>
         <div className="col-md-6 row align-items-center justify-content-between">
           <div>
-            <p className="text-color fs-5">Be Careful & Stay Safe</p>
-            <h1 className="text-dark fs-1 my-3">Treatement For Coronavirus</h1>
+            <p className="text-color fs-5">Covid Care</p>
+            <h1 className="text-dark fs-1 my-3">
+              Get a World Class Health Service
+            </h1>
             <small className="text-secondary">
-              To date, there is no vaccine and no specific antiviral medicine to
-              prevent or treat COVID-2019. However, those affected should
-              receive care to relieve symptoms. People with serious illness
-              should be hospitalized. Most patients recover thanks to supportive
-              care.
+              Covid care has all the characteristics of a world-class hospital
+              with wide range of services and specialists, equipments and
+              technology, ambience and service quality. The hospital is a
+              showcase of synergy of medical technology and advances in ICT
+              Division through paperless medical records. The skilled nurses,
+              technologists and administrators of Bangladesh Specialized
+              Hospital, aided by state-of-the-art equipments, provide a
+              congenial infrastructure for the medical professionals in
+              providing healthcare of international standards.
             </small>
           </div>
         </div>
         <div className="col-md-6">
-          <img className="img-fluid" src={careful} alt="about img" />
+          <img className="img-fluid" src={aboutImg} alt="about img" />
         </div>
       </section>
     </div>

@@ -67,7 +67,7 @@ const Header = () => {
               </li>
               {user?.email ? (
                 <li className="nav-item my-auto" onClick={logOut}>
-                  <Link className="nav-link" to="/login">
+                  <Link className="nav-link" to="/home">
                     <span className="btn btn-color">
                       Logout <i className="fas fa-sign-out-alt"></i>
                     </span>

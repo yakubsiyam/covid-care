@@ -28,7 +28,7 @@ code {
 
 .btn-color:hover {
   background-color: #ec4d4e;
-  color: white;
+  color: white !important;
 }
 
 .btn-services {
