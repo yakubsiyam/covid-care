@@ -46,9 +46,9 @@ function App() {
               <Guidelines></Guidelines>
             </PrivateRoute>
 
-            <Route path="/contact">
+            <PrivateRoute path="/contact">
               <Contact></Contact>
-            </Route>
+            </PrivateRoute>
 
             <Route exact path="/login">
               <Login></Login>

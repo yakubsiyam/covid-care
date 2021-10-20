@@ -4,7 +4,6 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
-  // createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";

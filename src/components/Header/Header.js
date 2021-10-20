@@ -55,18 +55,10 @@ const Header = () => {
 
               <li className="nav-item my-auto">
                 <span className="nav-link">
-                  {" "}
-                  {user?.email && (
-                    <span className="nav-link">
-                      <img
-                        src={user.photoURL}
-                        className="rounded-circle w-25 p-4 p-lg-2"
-                        alt="user img"
-                      />
-                      <span className="text-color">
-                        Hi, {user.displayName}{" "}
-                      </span>
-                    </span>
+                  {user?.displayName ? (
+                    <p className="pt-md-3">{user?.displayName}</p>
+                  ) : (
+                    <p className="pt-md-3">{user?.email}</p>
                   )}
                 </span>
               </li>

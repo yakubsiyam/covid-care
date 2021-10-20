@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import registerImg from "../../images/register.jpg";
 
 const Register = () => {
+  const auth = getAuth();
+
   const { googleLogIn } = useAuth();
   const location = useLocation();
   const history = useHistory();
@@ -17,6 +20,8 @@ const Register = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [erroR, setError] = useState("");
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -26,8 +31,14 @@ const Register = () => {
   };
 
   const handleRegistration = (e) => {
-    console.log(email, password);
     e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        history.push(redirect_uri);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
   return (
     <div className="container">
@@ -64,6 +75,7 @@ const Register = () => {
                 required
               />
             </div>
+            <small className="text-danger">{erroR}</small>
             <button className="btn error-btn mb-2 col-12">
               <i className="fas fa-sign-in-alt"></i> Register
             </button>
