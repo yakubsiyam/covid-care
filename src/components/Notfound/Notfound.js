@@ -17,7 +17,7 @@ const Notfound = () => {
                 Your Requested Page is Not Found!!!
               </p>
               <Link className="btn error-btn btn-lg my-4" to="/home">
-                <i class="fas fa-arrow-right"></i> Want To Go Home ?
+                <i className="fas fa-arrow-right"></i> Want To Go Home ?
               </Link>
             </div>
           </div>

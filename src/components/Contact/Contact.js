@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import contactImg from "../../images/contactImg.png";
 
 const Contact = () => {
@@ -17,7 +18,12 @@ const Contact = () => {
               <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
-              <input type="email" className="form-control" id="inputEmail4" />
+              <input
+                type="email"
+                className="form-control"
+                id="inputEmail4"
+                required
+              />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputPassword4" className="form-label">
@@ -27,6 +33,7 @@ const Contact = () => {
                 type="password"
                 className="form-control"
                 id="inputPassword4"
+                required
               />
             </div>
             <div className="col-12">
@@ -38,6 +45,7 @@ const Contact = () => {
                 className="form-control"
                 id="inputAddress"
                 placeholder="1234 Main St"
+                required
               />
             </div>
             <div className="col-12">
@@ -49,13 +57,19 @@ const Contact = () => {
                 className="form-control"
                 id="inputAddress2"
                 placeholder="Apartment, studio, or floor"
+                required
               />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputCity" className="form-label">
                 City
               </label>
-              <input type="text" className="form-control" id="inputCity" />
+              <input
+                type="text"
+                className="form-control"
+                id="inputCity"
+                required
+              />
             </div>
             <div className="col-md-4">
               <label htmlFor="inputState" className="form-label">
@@ -76,7 +90,12 @@ const Contact = () => {
               <label htmlFor="inputZip" className="form-label">
                 Zip
               </label>
-              <input type="text" className="form-control" id="inputZip" />
+              <input
+                type="text"
+                className="form-control"
+                id="inputZip"
+                required
+              />
             </div>
             <div className="col-12">
               <div className="form-check">
@@ -91,9 +110,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="col-12">
-              <button type="submit" className="btn error-btn">
+              <Link to="/notfound" type="submit" className="btn error-btn">
                 Send
-              </button>
+              </Link>
             </div>
           </form>
         </div>
