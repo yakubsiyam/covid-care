@@ -47,6 +47,11 @@ const Header = () => {
                   Guidelines
                 </Link>
               </li>
+              <li className="nav-item my-auto">
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
+              </li>
 
               <li className="nav-item my-auto">
                 <span className="nav-link">

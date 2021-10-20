@@ -13,6 +13,7 @@ import SingleService from "./components/SingleService/SingleService";
 import AuthProvider from "./contexts/AuthProvider";
 import Register from "./components/Register/Register";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
             <PrivateRoute exact path="/guidelines">
               <Guidelines></Guidelines>
             </PrivateRoute>
+
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
 
             <Route exact path="/login">
               <Login></Login>
