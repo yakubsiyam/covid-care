@@ -1,3 +1,4 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
@@ -5,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.jpg";
 
 const Login = () => {
+  const auth = getAuth();
   const { googleLogIn } = useAuth();
   const location = useLocation();
   const history = useHistory();
@@ -18,6 +20,8 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [erroR, setError] = useState("");
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -27,8 +31,14 @@ const Login = () => {
   };
 
   const handleLogin = (e) => {
-    console.log(email, password);
     e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        history.push(redirect_uri);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
   return (
     <div className="container my-5">
@@ -63,6 +73,7 @@ const Login = () => {
                 placeholder="Your password"
               />
             </div>
+            <small className="text-danger">{erroR}</small>
             <button className="btn error-btn mb-2 col-12">
               <i className="fas fa-sign-in-alt"></i> Login
             </button>
